@@ -9,8 +9,3 @@ Scenario: Verify basic functionality
 	When navigate to 'Time' menu item
 	And navigate to 'Attendance' menu item
 	And navigate to 'Employee Records' menu item
-
-
-
-
-

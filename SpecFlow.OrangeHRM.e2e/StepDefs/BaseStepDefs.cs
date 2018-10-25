@@ -15,7 +15,7 @@ namespace SpecFlow.OrangeHRM.e2e.StepDefs
             SetWebDriver(new ChromeDriver(pathToDriver));
             Configuration.Timeout = 6;
             GetWebDriver().Manage().Window.Maximize();
-            // Navigate to applcation URL.
+            // Navigate to application URL.
             GoToUrl(TestVariables.APPLICATION_URL);
         }
 
