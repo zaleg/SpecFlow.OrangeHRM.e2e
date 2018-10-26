@@ -13,7 +13,7 @@ namespace SpecFlow.OrangeHRM.e2e.StepDefs
         {
             var pathToDriver = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\SpecFlow.OrangeHRM.e2e\\lib";
             SetWebDriver(new ChromeDriver(pathToDriver));
-            Configuration.Timeout = 6;
+            Configuration.Timeout = 10;
             GetWebDriver().Manage().Window.Maximize();
             // Navigate to application URL.
             GoToUrl(TestVariables.APPLICATION_URL);

@@ -85,6 +85,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("navigate to \'Attendance\' menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.And("navigate to \'Employee Records\' menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.When("view records for employee with \'John Smith\' name and \'2018-10-08\' date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -86,10 +86,12 @@
       <DependentUpon>OrangeHRMDemoFlow.feature</DependentUpon>
     </Compile>
     <Compile Include="PageObjects\DashboardPage.cs" />
+    <Compile Include="PageObjects\EmployeeAttendanceRecordsPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefs\BaseStepDefs.cs" />
     <Compile Include="StepDefs\DashboardStepDefs.cs" />
+    <Compile Include="StepDefs\EmployeeAttendanceRecordsStepDefs.cs" />
     <Compile Include="StepDefs\LoginStepDefs.cs" />
     <Compile Include="Helpers\TestVariables.cs" />
   </ItemGroup>

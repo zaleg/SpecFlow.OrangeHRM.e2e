@@ -20,10 +20,11 @@ namespace SpecFlow.OrangeHRM.e2e.PageObjects
         private SeleneElement EmployeeRecordsMenuItem = S(By.Id("menu_attendance_viewAttendanceRecord"));
         #endregion
 
+        EmployeeAttendanceRecordsPage employeeAttendanceRecordsPage = new EmployeeAttendanceRecordsPage();
+
         public void IsLoaded()
         {
-            NavBar.Should(Be.Visible);
-            Assert.AreEqual(NavBar.Text, DASHBOARD_PAGE_TITLE);
+            NavBar.Should(Have.ExactText(DASHBOARD_PAGE_TITLE));
         }
 
         public void NavigateToMenuItem(String strItem)
@@ -38,6 +39,7 @@ namespace SpecFlow.OrangeHRM.e2e.PageObjects
                     break;
                 case "Employee Records":
                     EmployeeRecordsMenuItem.Should(Be.Visible).Click();
+                    employeeAttendanceRecordsPage.IsLoaded();
                     break;
                 default:
                     throw new NotSupportedException(string.Format("'{0}' menu item is not supported now.", strItem));

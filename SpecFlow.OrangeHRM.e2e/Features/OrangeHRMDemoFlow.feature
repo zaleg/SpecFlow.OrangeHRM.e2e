@@ -9,3 +9,4 @@ Scenario: Verify basic functionality
 	When navigate to 'Time' menu item
 	And navigate to 'Attendance' menu item
 	And navigate to 'Employee Records' menu item
+	When view records for employee with 'John Smith' name and '2018-10-08' date
