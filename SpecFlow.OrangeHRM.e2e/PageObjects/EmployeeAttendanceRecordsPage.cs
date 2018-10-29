@@ -17,11 +17,12 @@ namespace SpecFlow.OrangeHRM.e2e.PageObjects
         #region Locators
         private SeleneElement NavBar = S(By.XPath("//*[@id='primary-header']//span[1]"));
         private SeleneElement TxtEmployeeName = S(By.Id("attendance_employeeName_empName"));
+        private SeleneElement EmployeeSearchResultSection = S(By.XPath("//*[@class='ac_results']//li"));
         private SeleneElement DatePicker = S(By.Id("attendance_date"));
         private SeleneElement BtnView = S(By.Id("btView"));
         private SeleneElement TableResults = S(By.Id("tableWrapper"));
 
-        
+
 
 
 
@@ -35,7 +36,8 @@ namespace SpecFlow.OrangeHRM.e2e.PageObjects
 
         public void SetEmployeeDataAndView(String strEmployeeName, String date)
         {
-            TxtEmployeeName.Should(Be.Visible).SetValue(strEmployeeName).PressEnter();
+            TxtEmployeeName.Should(Be.Visible).SetValue(strEmployeeName);
+            EmployeeSearchResultSection.Should(Have.Text(strEmployeeName)).Click();
             // Set date via JS.
             Selene.ExecuteScript(
                 @"
@@ -44,6 +46,13 @@ namespace SpecFlow.OrangeHRM.e2e.PageObjects
                             );
             BtnView.Click();
             TableResults.Should(Be.Visible);
+        }
+
+        public void ValidateNoRecords()
+        {
+            TableResults.Find(By.XPath(".//tbody//tr//td[2]"))
+                .Should(Have
+                .ExactText("No attendance records to display"));
         }
     }
 }

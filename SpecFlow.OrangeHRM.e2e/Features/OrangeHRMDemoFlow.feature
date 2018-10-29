@@ -10,3 +10,4 @@ Scenario: Verify basic functionality
 	And navigate to 'Attendance' menu item
 	And navigate to 'Employee Records' menu item
 	When view records for employee with 'John Smith' name and '2018-10-08' date
+	Then verify that there are no attendance records in the table

@@ -19,6 +19,12 @@ namespace SpecFlow.OrangeHRM.e2e.StepDefs
             employeeAttendanceRecordsPage.SetEmployeeDataAndView(p0, p1);
         }
 
+        [Then(@"verify that there are no attendance records in the table")]
+        public void ThenVerifyThatThereAreNoAttendanceRecordsInTheTable()
+        {
+            employeeAttendanceRecordsPage.ValidateNoRecords();
+        }
+
 
     }
 }
